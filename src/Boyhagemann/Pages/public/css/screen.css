@@ -1,0 +1,41 @@
+
+
+section.zone {
+    border: 5px dashed #eee;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+blockquote.block {
+    position: relative;
+    padding: 10px;
+    background-color: #f6f6f6;
+}
+blockquote.block:hover {
+    background-color: #f6f6f6;
+}
+blockquote.block.global-1 h2 {
+    color: #aaa;
+}
+
+.btn-group-hover {
+    position: relative;
+}
+.btn-group-hover > .btn-group {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.btn-group-hover:hover > .btn-group {
+    display: block;
+}
+
+
+.draggable {    
+    cursor: pointer;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
