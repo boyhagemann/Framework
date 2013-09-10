@@ -152,8 +152,8 @@ abstract class CrudController extends BaseController
         $form = $this->getForm();
         $model = $this->getModel();
         $route = $this->getBaseRoute();
-		$success = Config::get('crud::config.redirects.success.store');
-		$error = Config::get('crud::config.redirects.error.store');
+		$success = Config::get('crud::config.redirects.success.store') ? Config::get('crud::config.redirects.success.store') : $route . '.index';
+		$error = Config::get('crud::config.redirects.error.store') ? Config::get('crud::config.redirects.error.store') : $route . '.edit';
 
         $v = Validator::make(Input::all(), $model->rules);
 
@@ -199,8 +199,8 @@ abstract class CrudController extends BaseController
         $form = $this->getForm();
         $model = $this->getModel()->findOrFail($id);
         $route = $this->getBaseRoute();
-		$success = Config::get('crud::redirects.success.update');
-		$error = Config::get('crud::redirects.error.update');
+		$success = Config::get('crud::redirects.success.update') ? Config::get('crud::redirects.success.update') : $route . '.index';
+		$error = Config::get('crud::redirects.error.update') ? Config::get('crud::redirects.error.update') : $route . '.edit';
 
         $v = Validator::make(Input::all(), $model->rules);
 
@@ -228,7 +228,7 @@ abstract class CrudController extends BaseController
         $form = $this->getForm();
         $model = $this->getModel()->findOrFail($id);
         $route = $this->getBaseRoute();
-		$success = Config::get('crud::redirects.success.update');
+		$success = Config::get('crud::redirects.success.update') ? Config::get('crud::redirects.success.update') : $route . '.index';
 
         $model->delete();
 
