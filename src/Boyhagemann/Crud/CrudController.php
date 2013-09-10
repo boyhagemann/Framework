@@ -319,7 +319,7 @@ abstract class CrudController extends BaseController
 
         $resourceDefaults = array('index', 'create', 'store', 'show', 'edit', 'update', 'destroy');
 
-		$routeName = \Route::getRequest()->getPathInfo();
+		$routeName = \Route::getCurrentRoute()->compile()->getStaticPrefix();
 		$routeName = str_replace('/', '.', trim($routeName, '/'));
 
         if (strpos('', $routeName)) {
