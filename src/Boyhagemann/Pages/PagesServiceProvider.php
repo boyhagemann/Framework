@@ -57,8 +57,8 @@ class PagesServiceProvider extends ServiceProvider
 			Config::set('blocks', App::make('Boyhagemann\Pages\Model\Page')->getBlocks());
 
 			$routes = array();
-			foreach(Route::getRoutes() as $route) {
-				$routes[$route->getPath()] = $route;
+			foreach(Route::getRoutes() as $path => $route) {
+				$routes[$path] = $route;
 			}
 
 			foreach(Model\Page::get() as $page) {

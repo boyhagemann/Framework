@@ -42,7 +42,7 @@ class FormServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        require_once(__DIR__ . '/../../form-macros.php');
+        require_once(__DIR__ . '/form-macros.php');
     }
 
     /**
