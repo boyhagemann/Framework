@@ -27,6 +27,9 @@ class CrudServiceProvider extends ServiceProvider
         $this->app->register('Boyhagemann\Form\FormServiceProvider');
         $this->app->register('Boyhagemann\Model\ModelServiceProvider');
         $this->app->register('Boyhagemann\Overview\OverviewServiceProvider');
+
+		$this->app['view']->addNamespace('crud', __DIR__.'/views');
+		$this->app['config']->addNamespace('crud', __DIR__.'/config');
     }
 
     public function boot()
@@ -44,6 +47,7 @@ class CrudServiceProvider extends ServiceProvider
      */
     public function provides()
     {
+		return array('crud');
     }
 
 }

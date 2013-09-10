@@ -18,7 +18,6 @@ class NavigationServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('navigation', 'navigation');
 	}
 
 	/**
@@ -29,6 +28,8 @@ class NavigationServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->package('navigation', 'navigation');
+
+		$this->app['view']->addNamespace('navigation', __DIR__.'/views');
 	}
 
 	/**

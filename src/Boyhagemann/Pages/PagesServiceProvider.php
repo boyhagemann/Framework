@@ -26,6 +26,8 @@ class PagesServiceProvider extends ServiceProvider
         $this->app->register('Boyhagemann\Crud\CrudServiceProvider');
         $this->app->register('Boyhagemann\Blocks\BlocksServiceProvider');
         $this->app->register('Boyhagemann\Text\TextServiceProvider');
+
+		$this->app['view']->addNamespace('pages', __DIR__.'/views');
     }
     
     public function boot()

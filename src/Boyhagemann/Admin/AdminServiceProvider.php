@@ -29,6 +29,8 @@ class AdminServiceProvider extends ServiceProvider {
             
         $this->app->register('Boyhagemann\Pages\PagesServiceProvider');
         $this->app->register('Boyhagemann\Navigation\NavigationServiceProvider');
+
+		$this->app['view']->addNamespace('admin', __DIR__.'/views');
 	}
 
         public function boot()
